@@ -1,0 +1,15 @@
+body {
+	display: block;
+	max-width: 1000px;
+	margin: 3px auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+.container {
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+}

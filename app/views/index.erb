@@ -1,0 +1,23 @@
+<div class="enter-song">
+<form method="POST" action="/">
+	<label>Search for your song by title:</label>
+	<input type="text" name="search[text]">
+	<input type="submit">
+</form>
+</div>
+<div class="song-options">
+	<% if @song_options %>
+	<h4>Did you mean: </h4>
+		<% @song_options.each do |song| %>
+			<p><a href="/?songid=<%= song.keys[0] %>"><%= song.values[0] %></a></p>
+		<% end %>
+	<% end %>
+</div>
+<div class="lyrics-box">
+<% if @lyrics %>
+	<% @ids.each do |id| %>
+		<iframe src="https://open.spotify.com/embed?uri=spotify:track:<%= id %>&view=coverart" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+		<br />
+	<% end %>
+<% end %>
+</div>
