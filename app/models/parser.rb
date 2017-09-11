@@ -15,6 +15,7 @@ module Parser
 
   def self.get_words_out(text)
   	text.delete! ("/.,!?\"")
+  	text.gsub!(/’/, "'")
   	words = text.split(" ")
   	start = 0
   	words.each_with_index do |word, index|
@@ -24,7 +25,7 @@ module Parser
   	end
   	words = words[start..-1]
   	words.delete_if { |word| word[0] == "[" }
-  	words.join(" ")
+  	words.join(" ").downcase!
   end
 end
 
